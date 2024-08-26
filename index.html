@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Html protector & encoder</title>
+	<meta name="theme-color" content="#ffffff">
+	<link href="./files/css/core.css" rel="stylesheet">
+	<link href="./files/css/demo.css" rel="stylesheet">
+	<link rel="shortcut icon" href="./files/img/logo.png">
+	<meta property="og:image" content="./files/img/logo.png">
+	<link href="./files/css/theme-default.css" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+	<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
+	<meta name="description" content="Html protector & encoder || Easy way to protect your html code || Mr999Plus">
+</head>
+<body>
+	<div id="loader">
+		<div class="loaderBlur"></div>
+		<div class="loaderSpinner"></div>
+	</div>
+	<div class="layout-wrapper layout-content-navbar">
+		<div class="layout-container">
+			<div id="menu-blur"></div>
+			<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme"> 
+				<div class="app-brand demo"> 
+					<a class="app-brand-link"> 
+						<span class="app-brand-logo demo">
+							<img width="50px" src="./files/img/logo.png">
+						</span> 
+						<span class="app-brand-text menu-text fw-bolder ms-2">Mr Protector</span> 
+					</a> 
+				</div> 
+				<ul class="menu-inner py-1">
+					<li class="menu-item active" id="MenuInput"> 
+						<a class="menu-link">
+							<i class="menu-icon fa-regular fa-code" aria-hidden="true"></i> 
+							<div data-i18n="Analytics">Input</div> 
+						</a> 
+					</li>
+					<li class="menu-item" id="MenuOutput"> 
+						<a class="menu-link">
+							<i class="menu-icon fa-regular fa-gear-complex-code" aria-hidden="true"></i> 
+							<div data-i18n="Analytics">Output</div> 
+						</a> 
+					</li>	
+					<li class="menu-item" id="MenuAbout"> 
+						<a class="menu-link">
+							<i class="menu-icon fa-regular fa-circle-info" aria-hidden="true"></i> 
+							<div data-i18n="Analytics">About</div> 
+						</a> 
+					</li>	
+					<li class="menu-item" id="MenuContact"> 
+						<a class="menu-link">
+							<i class="menu-icon fa-regular fa-address-card" aria-hidden="true"></i> 
+							<div data-i18n="Analytics">Contact</div> 
+						</a> 
+					</li>	
+				</ul> 
+			</aside>
+			<div class="layout-page">
+				<nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme d-xl-none" id="layout-navbar"> 
+					<div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none"> 
+						<a class="nav-item nav-link px-0 me-xl-4" id="layout-menu-btn"> 
+							<i class="fa-solid fa-bars"></i> 
+						</a> 
+					</div> 
+					<div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse"> 
+						<div class="navbar-nav align-items-center"> 
+							<div class="nav-item d-flex align-items-center">
+								<br> 
+								<h4 style="margin-bottom: 0px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">Mr Protector</h4>
+							</div> 
+						</div>
+					</div> 
+				</nav>
+				<div class="content-wrapper">
+					<div class="container-xxl flex-grow-1 container-p-y">
+						<div class="card container-xxl" id="main" style="overflow: auto;">
+							<div id="input">
+								<div class="row">
+									<h4 class="page-title mt-3 mb-3" style="font-weight: bold;">Upload or Paste Code</h4>
+								</div>
+								<div class="row"> 
+									<div class="col-md-12 mb-3"> 
+										<div class="form-group"> 
+											<label>Code <span style="color: #ff3e1d;">*</span></label>
+											<div class="col-md-12 mb-3 form-control" id="InputCode" style="height: 500px; font-size: 14px;"></div> 
+										</div> 
+									</div>  
+								</div>
+								<div class="row"> 
+									<div class="col-md-6 mb-3"> 
+										<div class="form-group"> 
+											<label>Upload <span style="color: #05b12c;">*</span></label>
+											<input type="file" class="form-control" id="UploadCode" accept="text/*"> 
+										</div> 
+									</div>
+									<div class="col-md-6 mb-3"> 
+										<div class="form-group"> 
+											<label>Methods <span style="color: #ff3e1d;">*</span></label>
+											<select id="Methods" class="form-control"> 
+												<option value="None">None</option> 
+												<option value="PreLoader">Pre Loader</option>
+												<option value="DomainLock">Domain Lock</option> 
+												<option value="Both">Both</option> 
+											</select>											
+										</div> 
+									</div>
+								</div>
+								<div id="PreLoader" style="display:none">
+									<div class="row">
+										<div class="col-md-6 mb-3"> 
+											<div class="form-group"> 
+												<label>Them <span style="color: #ff3e1d;">*</span></label>
+												<select id="Them" class="form-control"> 
+													<option value="simple-loader">Simple Loader</option> 
+													<option value="stairs-loader">Stairs Loader</option> 
+													<option value="bouncing-ball">Bouncing Ball</option> 
+													<option value="loading-pen">Loading Pen</option> 
+													<option value="gear-loader">Gear Loader</option> 
+												</select>											
+											</div> 
+										</div>
+										<div class="col-md-6 mb-3"> 
+											<div class="form-group"> 
+												<label>Load <span style="color: #ff3e1d;">*</span></label>
+												<select id="Load" class="form-control"> 
+													<option value="3">3 second</option>
+													<option value="4">4 second</option>
+													<option value="5">5 second</option>
+													<option value="6">6 second</option>
+													<option value="7">7 second</option>
+													<option value="8">8 second</option>
+													<option value="9">9 second</option>
+													<option value="10">10 second</option>
+												</select>											
+											</div> 
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12 mb-3"> 
+											<div class="form-group">
+												<label>Preview</label>
+												<iframe class="col-md-12 mb-3 form-control" id="Preview" style="height: 250px;" src="./files/loader/simple-loader.html"></iframe> 
+											</div> 
+										</div>
+									</div>
+								</div>
+								<div id="DomainLock" style="display:none">
+									<div class="row"> 
+										<div class="col-md-12 mb-3"> 
+											<div class="form-group"> 
+												<label>Redirect <span style="color: #ff3e1d;">*</span></label> 
+												<input id="Redirect" class="form-control" placeholder="https://example.xyz">
+											</div> 
+										</div>  
+									</div>
+									<div class="row"> 
+										<div class="col-md-12 mb-3"> 
+											<div class="form-group"> 
+												<label>Domains <span style="color: #ff3e1d;">*</span></label> 
+												<textarea id="Domains" rows="4" class="form-control" placeholder="example.lol&#10;example.xyz&#10;example.com&#10;example.info" ></textarea>
+											</div> 
+										</div>  
+									</div>
+								</div>
+
+								<div class="row" style="padding: 0 10px;">
+									<a id="ProtectNow" href="#ProtectNow" class="col-md-12 btn btn-primary mb-3">Protect Now</a>
+								</div>
+							</div>
+							<div id="output" style="display:none">
+								<div class="row">
+									<h4 class="page-title mt-3 mb-3" style="font-weight: bold;">Output</h4>
+								</div>
+								<div class="row"> 
+									<div class="col-md-12 mb-3"> 
+										<div class="form-group"> 
+											<label>Code <span style="color: #ff3e1d;">*</span></label>
+											<div class="col-md-12 mb-3 form-control" id="OutputCode" style="height: 500px; font-size: 14px;"></div> 
+										</div> 
+									</div>  
+								</div>
+								<div class="row" style="padding: 0 10px; display: flex; justify-content: center;">
+									<a id="DownloadOutput" href="#DownloadOutput" class="col-md-3 btn btn-success mb-3 disabled">Download Output</a>
+									<div class="col-md-1"></div>
+									<a id="CopyOutput" href="#CopyOutput" class="col-md-3 btn btn-info mb-3 disabled">Copy Output</a>
+									<div class="col-md-1"></div>
+									<a id="ProtectNew" href="#ProtectNew" class="col-md-3 btn btn-warning mb-3 disabled">Protect New</a>
+								</div>	
+							</div>	
+							<div id="about" style="display:none">
+								<div class="row">
+									<h4 class="page-title mt-3 mb-3" style="font-weight: bold;">About</h4>
+									<p class="mb-3">A free and efficient encryption for Html. Make your code harder to copy and prevent people from stealing your work.</p>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>var api = 'https://api.mr999plus.top/html-protector/';</script>
+	<script src="https://cdn.rawgit.com/ajaxorg/ace-builds/master/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./files/js/script.min.js"></script>
+</body>
+</html>
